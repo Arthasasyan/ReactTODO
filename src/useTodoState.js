@@ -29,6 +29,7 @@ export default () => {
 
   return {
     todos,
+    dones,
     addTodo: todoText => {
       const newTodos = [...todos, todoText]
       setTodos(newTodos);
@@ -49,8 +50,8 @@ export default () => {
       localStorage.setItem(DONE_KEY, JSON.stringify(newDones));
     },
     setToTodo: doneIndex => {
-      const item = todos[doneIndex]
-      const newDones = todos.filter((_, index) => index !== doneIndex);
+      const item = dones[doneIndex]
+      const newDones = dones.filter((_, index) => index !== doneIndex);
       const newTodos = [...todos, item]
       setDones(newDones);
       setTodos(newTodos);
@@ -58,9 +59,9 @@ export default () => {
       localStorage.setItem(DONE_KEY, JSON.stringify(newDones));
     },
     deleteDone: doneIndex => {
-      const newDones = todos.filter((_, index) => index !== doneIndex);
-      setTodos(newDones);
-      localStorage.setItem(TODO_KEY, JSON.stringify(newDones))
+      const newDones = dones.filter((_, index) => index !== doneIndex);
+      setDones(newDones);
+      localStorage.setItem(DONE_KEY, JSON.stringify(newDones))
     }
   };
 };

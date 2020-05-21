@@ -5,9 +5,10 @@ import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 import useTodoState from './useTodoState';
 import './styles.css';
+import DoneList from "./DoneList";
 
 const App = () => {
-    const {todos, addTodo, deleteTodo, setToDone, setToTodo, deleteDone} = useTodoState();
+    const {todos, dones, addTodo, deleteTodo, setToDone, setToTodo, deleteDone} = useTodoState();
 
     return (
         <div className="App">
@@ -25,7 +26,12 @@ const App = () => {
                 }}
             />
 
-            <TodoList todos={todos} deleteTodo={deleteTodo}/>
+            <TodoList todos={todos} deleteTodo={deleteTodo} setToDone={setToDone}/>
+
+            <Typography component="h1" variant="h2">
+                Dones
+            </Typography>
+            <DoneList dones={dones} deleteDone={deleteDone} setToTodo={setToTodo}/>
         </div>
     );
 };
