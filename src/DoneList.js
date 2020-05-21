@@ -5,26 +5,26 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
-import DoneIcon from '@material-ui/icons/Done'
+import UndoIcon from "@material-ui/icons/Undo";
 
-const TodoList = ({todos, deleteTodo, setToDone}) => (
+const DoneList = ({dones, deleteDone, setToTodo}) => (
     <List>
-        {todos.map((todo, index) => (
+        {dones.map((done, index) => (
             <ListItem key={index.toString()} dense button>
-                <ListItemText primary={todo}/>
+                <ListItemText primary={done}/>
                 <ListItemSecondaryAction>
                     <IconButton
-                        aria-label="Done"
+                        aria-label="Undo"
                         onClick={() => {
-                            setToDone(index)
+                            setToTodo(index)
                         }}
                     >
-                        <DoneIcon/>
+                        <UndoIcon/>
                     </IconButton>
                     <IconButton
                         aria-label="Delete"
                         onClick={() => {
-                            deleteTodo(index);
+                            deleteDone(index);
                         }}
                     >
                         <DeleteIcon/>
@@ -35,4 +35,4 @@ const TodoList = ({todos, deleteTodo, setToDone}) => (
     </List>
 );
 
-export default TodoList;
+export default DoneList;
