@@ -40,6 +40,12 @@ export default () => {
       setTodos(newTodos);
       localStorage.setItem(TODO_KEY, JSON.stringify(newTodos))
     },
+    editTodo: (todoIndex, value) => {
+      let newTodos = todos
+      newTodos[todoIndex] = value
+      setTodos(newTodos)
+      localStorage.setItem(TODO_KEY, JSON.stringify(newTodos))
+    },
     setToDone: todoIndex => {
       const item = todos[todoIndex]
       const newTodos = todos.filter((_, index) => index !== todoIndex);
@@ -61,6 +67,12 @@ export default () => {
     deleteDone: doneIndex => {
       const newDones = dones.filter((_, index) => index !== doneIndex);
       setDones(newDones);
+      localStorage.setItem(DONE_KEY, JSON.stringify(newDones))
+    },
+    editDone: (doneIndex, value) => {
+      let newDones = dones
+      newDones[doneIndex] = value
+      setDones(newDones)
       localStorage.setItem(DONE_KEY, JSON.stringify(newDones))
     }
   };
