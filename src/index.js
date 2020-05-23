@@ -12,6 +12,7 @@ const App = () => {
 
     return (
         <div className="App">
+            <div className="ToDo">
             <Typography component="h1" variant="h2">
                 Todos
             </Typography>
@@ -25,13 +26,14 @@ const App = () => {
                     }
                 }}
             />
-
             <TodoList todos={todos} deleteTodo={deleteTodo} setToDone={setToDone}/>
-
+            </div>  
+   <div className="Dones">
             <Typography component="h1" variant="h2">
                 Dones
             </Typography>
             <DoneList dones={dones} deleteDone={deleteDone} setToTodo={setToTodo}/>
+        </div>
         </div>
     );
 };

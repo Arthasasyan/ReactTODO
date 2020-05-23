@@ -2,3 +2,14 @@
   font-family: sans-serif;
   text-align: center;
 }
+.ToDo {
+  float: left; 
+  width: 50%;
+}
+.Dones {
+  float: left; 
+  width: 50%;
+}
+.but {
+  text-align: center;
+}
